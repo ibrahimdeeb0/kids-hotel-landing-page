@@ -39,7 +39,7 @@ Visit `http://127.0.0.1:8080/`. Open `ar/index.html` to preview Arabic.
 
 ## Content and publication
 
-- The supplied address is the **company address**, not a confirmed nursery location.
+- Contact information distinguishes the company registered address (7 Sadot, Ma’ale Adumim, Israel 9851356) from the nursery location (Al-Israa Street 11, Shuafat, Jerusalem), as supplied by the owner.
 - The supplied original logo replaces the earlier decorative house illustration.
 - Privacy pages cover only this informational website, **not the app**. The app’s audience and data practices have not been supplied.
 - Review company details and privacy wording against the chosen hosting provider before publication.
