@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="{{locale}}" dir="{{direction}}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="{{privacyDescription}}">
+  <meta name="theme-color" content="#fff8f8">
+  <title>{{privacyTitle}}</title>
+  <link rel="icon" href="{{assetPrefix}}assets/favicon.png" type="image/png">
+  <link rel="alternate" hreflang="en" href="{{englishUrl}}">
+  <link rel="alternate" hreflang="ar" href="{{arabicUrl}}">
+  <link rel="stylesheet" href="{{assetPrefix}}styles.css">
+</head>
+<body>
+{{>header}}
+  <main id="main" class="privacy-main wrap">
+    <a class="back-link" href="index.html"><span class="back-arrow" aria-hidden="true">←</span> {{back}}</a>
+    <p class="eyebrow">A.H.M HINDI LTD.</p>
+    <h1>{{privacyHeading}}</h1>
+    <p class="policy-date">{{policyDate}}</p>
+    <p class="privacy-lead">{{privacyLead}}</p>
+    <h2>{{scopeHeading}}</h2>
+    <p>{{scopeBody}}</p>
+    <h2>{{browsingHeading}}</h2>
+    <p>{{browsingBody}}</p>
+    <p>{{hostingBody}}</p>
+    <h2>{{contactingHeading}}</h2>
+    <p>{{contactingBody}}</p>
+    <h2>{{enquiriesHeading}}</h2>
+    <p>{{enquiriesBody}}</p>
+    <ul><li>{{emailText}} <a href="mailto:ihab@hinde.info"><bdi dir="ltr">ihab@hinde.info</bdi></a></li><li>{{phoneText}} <a href="tel:+97225334400"><bdi dir="ltr">+972 2 533 4400</bdi></a></li><li>{{addressText}} {{fullAddress}}</li></ul>
+    <h2>{{changesHeading}}</h2>
+    <p>{{changesBody}}</p>
+  </main>
+{{>footer}}
+</body>
+</html>

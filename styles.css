@@ -1,0 +1,234 @@
+/* Kids Hotel design tokens: sampled logo colors, accessible UI tones, shared scales. */
+:root {
+  color-scheme: light;
+  --color-primary: #ee5255;
+  --color-primary-strong: #b82d42;
+  --color-primary-hover: #992238;
+  --color-blue: #43b3e5;
+  --color-yellow: #fec92d;
+  --color-purple: #9e4ea5;
+  --color-green: #69b76c;
+  --color-canvas: #fff8f8;
+  --color-surface: #ffffff;
+  --color-surface-soft: #fff0f1;
+  --color-text: #322b3d;
+  --color-text-muted: #655c70;
+  --color-line: #e9dce5;
+  --color-focus: #71347d;
+  --font-body: 'Trebuchet MS', Arial, sans-serif;
+  --font-arabic: Tahoma, Arial, sans-serif;
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4.5rem;
+  --radius-small: 0.75rem;
+  --radius-card: 2rem;
+  --radius-pill: 999px;
+  --shadow-brand: 0 18px 50px rgb(158 78 165 / 8%);
+}
+
+/* Base and accessibility */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-block-start: var(--space-6); }
+body {
+  margin: 0;
+  background: var(--color-canvas);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; }
+a:focus-visible { outline: 3px solid var(--color-focus); outline-offset: 5px; }
+::selection { background: #fbe49c; color: var(--color-text); }
+img, svg { max-inline-size: 100%; }
+bdi { unicode-bidi: isolate; }
+.wrap { inline-size: min(1200px, calc(100% - 96px)); margin-inline: auto; }
+.skip-link {
+  position: absolute;
+  inset-block-start: -100px;
+  inset-inline-start: var(--space-4);
+  z-index: 10;
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-text);
+  color: var(--color-surface);
+  border-radius: var(--radius-small);
+}
+.skip-link:focus { inset-block-start: var(--space-4); }
+
+/* Brand and navigation */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-5);
+  padding-block: var(--space-5);
+  border-block-end: 1px solid var(--color-line);
+}
+.brand { display: inline-flex; align-items: center; gap: var(--space-3); text-decoration: none; }
+.brand-logo { display: block; inline-size: 76px; block-size: 76px; border-radius: var(--radius-small); }
+.brand-wordmark { color: var(--color-primary-strong); font-size: 26px; font-weight: 800; letter-spacing: -1px; line-height: 1.3; }
+.brand small { display: block; margin-block-start: 6px; font-size: 9px; font-weight: 500; color: var(--color-text-muted); letter-spacing: 1.5px; }
+.header nav { display: flex; align-items: center; flex-wrap: wrap; gap: var(--space-6); font-size: 13px; }
+.header nav a { display: inline-flex; align-items: center; min-block-size: 44px; text-decoration: none; }
+.header nav a:hover { color: var(--color-primary-strong); text-decoration: underline; text-underline-offset: 6px; }
+.header nav span { margin-inline-start: var(--space-3); }
+.header nav .language-switch { padding-inline: 18px; border: 1px solid var(--color-line); border-radius: var(--radius-pill); background: var(--color-surface); }
+.header nav .language-switch:hover { background: var(--color-surface-soft); text-decoration: none; }
+
+/* Hero: the original artwork, with circular accents borrowed from the logo. */
+.hero { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 56px; align-items: center; padding-block: var(--space-8); }
+.eyebrow { margin: 0 0 var(--space-5); color: var(--color-primary-strong); font-size: 11px; font-weight: 700; letter-spacing: 1.6px; line-height: 1.8; }
+.eyebrow-icon { inline-size: 26px; block-size: 30px; vertical-align: middle; margin-inline-end: var(--space-2); color: var(--color-primary); }
+h1, h2 { font-weight: 800; letter-spacing: -2px; line-height: 1.15; text-wrap: balance; }
+h1 { margin: 0 0 var(--space-5); font-size: clamp(48px, 5.4vw, 76px); }
+h1 > span { color: var(--color-primary-strong); }
+h2 { margin: 0; font-size: clamp(32px, 3.2vw, 44px); }
+.intro { max-inline-size: 440px; margin: 0 0 var(--space-6); color: var(--color-text-muted); font-size: 16px; line-height: 1.9; }
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-6);
+  min-block-size: 52px;
+  padding: 14px 26px;
+  border-radius: var(--radius-pill);
+  background: var(--color-primary-strong);
+  color: var(--color-surface);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+  box-shadow: 0 6px 18px rgb(184 45 66 / 12%);
+  transition: background 160ms ease;
+}
+.button:hover { background: var(--color-primary-hover); }
+.button span { font-size: 21px; }
+.hero-note { margin: var(--space-5) 0 0; font-size: 11px; color: var(--color-text-muted); }
+.hero-note span { margin-inline: var(--space-3); color: var(--color-primary-strong); }
+.hero-art {
+  position: relative;
+  display: grid;
+  place-items: center;
+  padding: 50px 20px;
+  aspect-ratio: 1 / 1.12;
+  isolation: isolate;
+  overflow: hidden;
+  border: 1px solid var(--color-line);
+  border-radius: 44% 44% var(--radius-card) var(--radius-card);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-brand);
+}
+.hero-art::before, .hero-art::after { content: ''; position: absolute; z-index: -1; border-radius: 50%; }
+.hero-art::before { inline-size: 56px; block-size: 56px; inset-block-start: 9%; inset-inline-start: 4%; background: var(--color-blue); opacity: 0.18; }
+.hero-art::after { inline-size: 34px; block-size: 34px; inset-block-end: 9%; inset-inline-end: 3%; background: var(--color-yellow); opacity: 0.55; }
+.hero-logo { display: block; inline-size: 100%; block-size: auto; border-radius: var(--radius-card); }
+.art-caption, .art-footer { position: absolute; inset-inline: 16px; text-align: center; }
+.art-caption { inset-block-start: 27px; color: var(--color-text-muted); font-size: 9px; letter-spacing: 1.5px; }
+.art-footer { inset-block-end: 20px; color: var(--color-primary-strong); font-size: 13px; }
+
+/* Company section: restrained use of the secondary palette. */
+.about-section { position: relative; padding-block: var(--space-8); background: var(--color-surface-soft); border-block: 1px solid var(--color-line); }
+.about-section::before {
+  content: '';
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline: 0;
+  block-size: 4px;
+  background: linear-gradient(90deg, var(--color-primary) 0% 20%, var(--color-blue) 20% 40%, var(--color-yellow) 40% 60%, var(--color-purple) 60% 80%, var(--color-green) 80% 100%);
+}
+.about-grid, .contact-section { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); gap: 70px; }
+.about-grid .eyebrow, .contact-heading .eyebrow { margin-block-end: var(--space-4); }
+.about-copy > p { margin: 0 0 var(--space-4); color: var(--color-text-muted); font-size: 15px; line-height: 1.9; }
+.company-line { margin-block-start: var(--space-5); padding-block-start: var(--space-5); border-block-start: 1px solid var(--color-line); font-size: 12px; }
+.status-dot { display: inline-block; inline-size: 8px; block-size: 8px; border-radius: 50%; background: var(--color-purple); margin-inline-end: 6px; }
+.company-label { display: block; margin-block-start: var(--space-1); margin-inline-start: 18px; color: var(--color-text-muted); font-size: 11px; }
+
+/* Contact and footer */
+.contact-section { padding-block: var(--space-8); }
+.contact-heading > p:last-child { margin-block-start: var(--space-4); color: var(--color-text-muted); font-size: 14px; }
+.contact-details { padding: 4px var(--space-5); border: 1px solid var(--color-line); border-radius: var(--radius-card); background: var(--color-surface); }
+.contact-row { display: grid; grid-template-columns: 125px minmax(0, 1fr) 20px; gap: var(--space-3); align-items: center; padding-block: var(--space-5); border-block-end: 1px solid var(--color-line); text-decoration: none; }
+.contact-row:last-child { border: 0; }
+.contact-label { color: var(--color-text-muted); font-size: 10px; letter-spacing: 1px; font-weight: 700; }
+.contact-value { font-size: 18px; line-height: 1.7; overflow-wrap: anywhere; }
+.row-arrow { color: var(--color-primary-strong); font-size: 22px; }
+.contact-row[href]:hover .contact-value { color: var(--color-primary-strong); text-decoration: underline; text-underline-offset: 5px; }
+.address-row { align-items: start; }
+.address-row .contact-label { padding-block-start: var(--space-1); }
+address { font-style: normal; }
+.address-row .contact-value { font-size: 15px; }
+.footer { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--space-5); padding-block: var(--space-6); border-block-start: 1px solid var(--color-line); }
+.footer-brand { display: flex; align-items: center; gap: var(--space-3); color: var(--color-primary-strong); font-size: 19px; font-weight: 700; text-decoration: none; }
+.footer-brand img { border-radius: var(--radius-small); }
+.footer-brand small { display: block; color: var(--color-text-muted); font-size: 10px; font-weight: 400; }
+.footer p, .footer > a:last-child { color: var(--color-text-muted); font-size: 11px; }
+.footer > a:last-child { text-underline-offset: 4px; }
+
+/* Long-form reading */
+.privacy-main { max-inline-size: 780px; padding-block: var(--space-7) var(--space-8); }
+.back-link { display: inline-block; margin-block-end: var(--space-6); font-size: 13px; text-underline-offset: 4px; }
+.privacy-main h1 { font-size: clamp(38px, 5vw, 60px); }
+.privacy-main h2 { margin: var(--space-6) 0 var(--space-3); font-size: 21px; letter-spacing: 0; }
+.privacy-lead { color: var(--color-text-muted); font-size: 18px; line-height: 1.9; margin-block-end: var(--space-6); }
+.privacy-main p, .privacy-main li { font-size: 15px; line-height: 1.95; }
+.privacy-main li { margin-block-end: var(--space-3); }
+.privacy-main a { text-underline-offset: 4px; }
+.privacy-main .policy-date { color: var(--color-text-muted); font-size: 12px; }
+
+/* Arabic uses the same scales with suitable shaping and line-height. */
+[dir='rtl'] body { font-family: var(--font-arabic); }
+[dir='rtl'] h1, [dir='rtl'] h2 { letter-spacing: 0; line-height: 1.5; }
+[dir='rtl'] h1 { font-size: clamp(40px, 4.4vw, 62px); }
+[dir='rtl'] h2 { font-size: 34px; }
+[dir='rtl'] .eyebrow, [dir='rtl'] .contact-label, [dir='rtl'] .art-caption { letter-spacing: 0; }
+[dir='rtl'] .eyebrow { font-size: 12px; }
+[dir='rtl'] .art-caption { font-size: 11px; }
+[dir='rtl'] .privacy-main h1 { font-size: clamp(36px, 4.5vw, 48px); }
+[dir='rtl'] .privacy-main h2 { font-size: 21px; }
+[dir='rtl'] .back-arrow { display: inline-block; transform: scaleX(-1); }
+
+@media (max-width: 1000px) {
+  .wrap { inline-size: calc(100% - 56px); }
+  .hero { gap: var(--space-6); }
+  .about-grid, .contact-section { gap: var(--space-6); }
+  .header nav { gap: var(--space-5); }
+  .contact-row { grid-template-columns: minmax(0, 1fr) 20px; gap: var(--space-2); }
+  .contact-label { grid-column: 1 / -1; }
+  .row-arrow { grid-column: 2; grid-row: 2; }
+}
+
+@media (max-width: 700px) {
+  .wrap { inline-size: calc(100% - 40px); }
+  .header { flex-wrap: wrap; padding-block: var(--space-4); gap: var(--space-3); }
+  .brand-logo { inline-size: 60px; block-size: 60px; }
+  .brand-wordmark { font-size: 24px; }
+  .header nav { gap: 20px; font-size: 12px; }
+  .header nav span { display: none; }
+  .header nav .language-switch { padding-inline: 14px; }
+  .hero { grid-template-columns: minmax(0, 1fr); gap: var(--space-7); padding-block: var(--space-7); }
+  h1 { font-size: clamp(43px, 10vw, 62px); letter-spacing: -1.5px; }
+  .intro { max-inline-size: 100%; font-size: 15px; }
+  .hero-art { inline-size: 100%; max-inline-size: 460px; margin-inline: auto; aspect-ratio: 1; padding: 44px 25px; }
+  .hero-logo { inline-size: 88%; }
+  .art-caption { inset-block-start: 20px; font-size: 8px; }
+  .art-footer { inset-block-end: 16px; font-size: 12px; }
+  .about-section, .contact-section { padding-block: var(--space-7); }
+  .about-grid, .contact-section { grid-template-columns: minmax(0, 1fr); gap: var(--space-5); }
+  h2 { font-size: 34px; }
+  .footer { gap: var(--space-4); }
+  .footer-brand { inline-size: 100%; }
+  .footer p { margin: 0; font-size: 10px; }
+  .footer > a:last-child { margin-inline-start: auto; }
+  [dir='rtl'] h1 { font-size: clamp(37px, 9vw, 48px); }
+  [dir='rtl'] h2 { font-size: 30px; }
+  [dir='rtl'] .privacy-main h2 { font-size: 21px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .button { transition: none; }
+}
